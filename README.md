@@ -12,15 +12,20 @@ As there is no way to embed an audio player with github markdown please follow [
   - With [npy4th](https://github.com/htwaijry/npy4th), [cudnn.torch](https://github.com/soumith/cudnn.torch)
 - Python (tested with 2.7)
   - numpy, [librosa](https://github.com/librosa/librosa), [torchfile](https://github.com/bshillingford/python-torchfile)
-- Download pretrained Network
+- Download pretrained Network and mean file
+
 ```
 wget https://www.dropbox.com/s/xpyoehayuhxvibq/net.t7?dl=1 -O data/net.t7
+wget https://www.dropbox.com/s/dwsq33r5bsgy9cd/mean.t7?dl=1 -O data/mean.t7
 ```
+
 ### Usage
 ##### 1. First convert raw audio to spectrogram
+
 ```
 python get_spectrogram.py --in_audio <path to audio file> --out_npy <where to save spectrogram>
 ```
+
 Additional arguments:
 - `-offset` and `-duration` control boundaries of a segment which will be converted to spectrogram. [By default first 10 seconds are used].
 - `-sr`: sample rate (samples), [default = 44100].
@@ -49,9 +54,9 @@ Parameters:
 ### Command-line used for texture examples
 
 ```
-python get_spectrogram.py --out_npy data/textures/keyboard2.npy --in_audio data/textures/keyboard2.mp3
-th neural_style_audio.lua -style data/textures/keyboard2.npy -content_layers '' -style_layers 1,5,10,15,20,25 -style_weight 10000000 -optimizer lbfgs -learning_rate 1e-1 -num_iterations 5000 -lowres
-python invert_spectrogram.py --spectrogram_t7 data/out/out.png.t7 --out_audio keyboard2_texture.wav
+python get_spectrogram.py --out_npy data/inputs/keyboard2.npy --in_audio data/inputs/keyboard2.mp3
+th neural_style_audio.lua -style data/inputs/keyboard2.npy -content_layers '' -style_layers 1,5,10,15,20,25 -style_weight 10000000 -optimizer lbfgs -learning_rate 1e-1 -num_iterations 5000 -lowres
+python invert_spectrogram.py --spectrogram_t7 data/out/out.png.t7 --out_audio data/out/keyboard2_texture.wav
 ```
 
 ### Command-line used for style transfer
