@@ -53,7 +53,6 @@ local function main(params)
   local content = load_data(params.content):type(params.dtype)
   local style = load_data(params.style):type(params.dtype)
 
-  print (content:size())
   local N_CHANNELS = content:size(2)
   local N_FILTERS = 4096
 
@@ -105,7 +104,7 @@ local function main(params)
 
   print('Running optimization with L-BFGS')
   local x, losses = optim.lbfgs(feval, img, optim_state_lbfgs)
-  torch.save('out.t7', x:view(x:size(2),x:size(3)):double():float())
+  torch.save('data/out/out.t7', x:view(x:size(2),x:size(3)):double():float())
 end
   
 
