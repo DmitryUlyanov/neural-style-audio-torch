@@ -2,10 +2,10 @@
 
 This is an extension of [texture synthesis](https://arxiv.org/abs/1505.07376) and [style transfer](https://arxiv.org/abs/1508.06576) method of Leon Gatys et al. based on [Justin Johnson's code](https://github.com/jcjohnson/neural-style) for neural style transfer.
 
-To listen to examples go to the blog post. Almost identical Lasagne implementation by [Vadim Lebedev](http://sites.skoltech.ru/compvision/members/vadim-lebedev/) can be found [here](https://github.com/vadim-v-lebedev/audio_style_tranfer). Also check out [TensorFlow implementation](https://github.com/DmitryUlyanov/neural-style-audio-tf).
+To listen to examples go to the [blog post](http://dmitryulyanov.github.io/audio-texture-synthesis-and-style-transfer/). Almost identical Lasagne implementation by [Vadim Lebedev](http://sites.skoltech.ru/compvision/members/vadim-lebedev/) can be found [here](https://github.com/vadim-v-lebedev/audio_style_tranfer). Also check out [TensorFlow implementation](https://github.com/DmitryUlyanov/neural-style-audio-tf).
 
 ### Examples
-As there is no way to embed an audio player with github markdown please follow [this link]() for the examples of texture synthesis and style transfer.
+As there is no way to embed an audio player with github markdown please follow [this link](http://dmitryulyanov.github.io/audio-texture-synthesis-and-style-transfer/) for the examples of texture synthesis and style transfer.
 
 ### Prerequisites
 - [Torch7](http://torch.ch/docs/getting-started.html#_)
@@ -56,7 +56,7 @@ Parameters:
 ```
 python get_spectrogram.py --out_npy data/inputs/keyboard2.npy --in_audio data/inputs/keyboard2.mp3
 th neural_style_audio.lua -style data/inputs/keyboard2.npy -content_layers '' -style_layers 1,5,10,15,20,25 -style_weight 10000000 -optimizer lbfgs -learning_rate 1e-1 -num_iterations 5000 -lowres
-python invert_spectrogram.py --spectrogram_t7 data/out/out.png.t7 --out_audio data/out/keyboard2_texture.wav
+python invert_spectrogram.py --spectrogram_t7 data/out/out.png.t7 --out_audio data/outputs/keyboard2_texture.wav
 ```
 
 ### Command-line used for style transfer
