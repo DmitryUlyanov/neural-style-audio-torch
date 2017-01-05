@@ -13,7 +13,7 @@ parser.add_argument('--duration', type=float, default=10,
 parser.add_argument('--sr', type=int, default=44100,
                     help='Sample rate to use.')
 parser.add_argument('--n_fft', type=int, default=1024,
-                    help='FFT Window lenght.')
+                    help='FFT Window length.')
 
 args = parser.parse_args()
 
