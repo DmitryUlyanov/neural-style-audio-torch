@@ -67,5 +67,5 @@ We have also implemented minimalistic script identical to TensorFlow and Lasagne
 python get_spectrogram.py --out_npy data/inputs/usa.npy --in_audio data/inputs/usa.mp3 --n_fft 2048 --sr 22050
 python get_spectrogram.py --out_npy data/inputs/imperial.npy --in_audio data/inputs/imperial.mp3 --n_fft 2048 --sr 22050
 th neural_style_audio_random.lua -alpha 1e-2
-python invert_spectrogram.py --spectrogram_t7 out.t7 --out_audio out.wav --n_iter 500 --n_fft 2048 --sr 22050
+python invert_spectrogram.py --spectrogram_t7 data/out/out.t7 --out_audio out.wav --n_iter 500 --n_fft 2048 --sr 22050
 ```
